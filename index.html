@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Nova Anime XL プロンプトメーカー</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', 'Hiragino Sans', 'Meiryo', sans-serif;
+      background: #faf9f7;
+      color: #2d2307;
+      padding: 2em 0 3em 0;
+      min-height: 100vh;
+    }
+    header, footer {
+      text-align: center;
+      margin-bottom: 2em;
+    }
+    h1 {
+      letter-spacing: .07em;
+      color: #e09736;
+      font-weight: 900;
+      margin-bottom: .25em;
+    }
+    main {
+      max-width: 880px;
+      margin: auto;
+    }
+    .cat-card {
+      background: #fffbe8;
+      border-radius: 13px;
+      box-shadow: 0 1px 9px #ecdac2bb;
+      margin-bottom: 1.2em;
+      padding: 1.25em 1.5em;
+      border: 1.5px solid #ffe1b3;
+    }
+    .prompt-section {
+      margin-top: 1.7em;
+      display: flex;
+      gap: 1.2em;
+      flex-wrap: wrap;
+    }
+    .prompt-col {
+      flex: 1 1 300px;
+      min-width: 210px;
+      margin-bottom: 1.3em;
+    }
+    .prompt-label {
+      font-weight: bold;
+      color: #e09736;
+      margin-bottom: .3em;
+      display: block;
+      letter-spacing: .06em;
+    }
+    textarea {
+      width: 100%;
+      min-height: 3.3em;
+      margin-bottom: .5em;
+      background: #fffdf5;
+      font-size: 1.07em;
+      border: 2.5px solid #ffb95e;
+      border-radius: 8px;
+      padding: .7em;
+      box-shadow: 0 1px 5px #f9e6c5cc;
+      color: #352508;
+      outline: none;
+      resize: vertical;
+    }
+    textarea:focus {
+      border: 2.5px solid #e09736;
+      box-shadow: 0 1px 12px #ffdb8e80;
+    }
+    #reset-btn {
+      background: #ff8585;
+      color: #fff;
+      margin-top: 1em;
+      font-weight: bold;
+      border: none;
+      border-radius: 7px;
+      padding: .4em 1.7em;
+      transition: background .2s;
+      cursor: pointer;
+      box-shadow: 0 1px 4px #e0973680;
+    }
+    #reset-btn:active { background: #e65252; }
+    @media (max-width: 700px) {
+      .prompt-section { flex-direction: column; gap: .6em; }
+      main { padding: 0 0.2em; }
+      .prompt-col { min-width: 0; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Nova Anime XL プロンプトメーカー</h1>
+    <p>全カテゴリ・全キャラ・タグ選択→プロンプト出力</p>
+  </header>
+  <main>
+    <div class="cat-card" id="tag-container"></div>
+    <button id="reset-btn">全リセット</button>
+    <div class="prompt-section">
+      <div class="prompt-col">
+        <span class="prompt-label">Positive</span>
+        <textarea id="positive-output" readonly></textarea>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <small>© Nova Anime XL Prompt Maker. 利用は自己責任／非公式ツール</small>
+  </footer>
+  <script src="main.js"></script>
+</body>
+</html>
